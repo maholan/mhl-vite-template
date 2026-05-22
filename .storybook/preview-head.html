@@ -1,0 +1,34 @@
+<!--
+  Injected into every story iframe's <head>.
+  Loads Inter the same way the app's index.html does so Storybook
+  and the running app render with identical font metrics.
+
+  For production: self-host inter-variable.woff2 at public/fonts/
+  and remove these tags — the @font-face in src/index.css takes over.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
+<noscript>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+  />
+</noscript>
+<!--
+  Set --font-inter immediately so mhl-tokens.css resolves:
+    --font-body: var(--font-inter, "Inter")  →  "Inter", sans-serif
+  This mirrors what Next.js next/font injects on <html> at runtime in
+  the docs/web apps. Without it the variable is unset and the fallback
+  string "Inter" is used without the explicit sans-serif stack.
+-->
+<style>
+  html {
+    --font-inter: "Inter", sans-serif;
+  }
+</style>

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://maholan-platform.github.io/mhl-ui-platform/schema/config.json",
+  "framework": "vite",
+  "typescript": true,
+  "srcDir": "src",
+  "tailwind": {
+    "css": "src/index.css"
+  },
+  "aliases": {
+    "components": "@/components/ui",
+    "utils": "@/libs/utils",
+    "hooks": "@/libs/hooks"
+  },
+  "theme": {
+    "brand": "purple",
+    "gray": "gray",
+    "radius": "md"
+  },
+  "registries": {
+    "@maholan": "https://cdn.jsdelivr.net/npm/@maholan/registry/public/r"
+  }
+}

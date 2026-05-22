@@ -1,0 +1,46 @@
+/* Storybook global styles — imports the full app stylesheet so stories
+   render with identical tokens, fonts, and utilities as the running app. */
+@import "../src/index.css";
+
+/* ── Transition utility used by some components ── */
+@utility transition-inherit-all {
+  transition-property: inherit;
+  transition-duration: inherit;
+  transition-timing-function: inherit;
+}
+
+/* ── Canvas / Docs background — follows the theme decorator's .dark toggle ── */
+/* --background-color-primary and --text-color-primary are the Tailwind v4    */
+/* property-specific mappings from mhl-tokens.css. They resolve to the dark   */
+/* values automatically when the .dark class is present on <html>.            */
+html,
+body {
+  background-color: var(--background-color-primary);
+  color: var(--text-color-primary);
+  min-height: 100%;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease;
+}
+
+/* ── Docs story preview box ───────────────────────────────────────────────── */
+/* .sbdocs-preview is Storybook's own UI element (not a component). Its       */
+/* background is driven by Storybook's appPreviewBg theme property, which     */
+/* doesn't update dynamically when addons.setConfig is called after load.     */
+/* One targeted rule here is the only reliable way to keep it in sync with    */
+/* the MHL dark surface without touching any other Storybook docs styles.     */
+html.dark .sbdocs-preview {
+  background-color: var(--background-color-primary);
+  border-color: var(--border-color-primary);
+}
+
+html.dark .docblock-code-toggle {
+  background-color: var(--background-color-secondary);
+  color: var(--text-color-secondary);
+  border-color: var(--border-color-primary);
+}
+
+html.dark .docblock-code-toggle:hover {
+  background-color: var(--background-color-secondary-hover);
+  color: var(--text-color-primary);
+}
