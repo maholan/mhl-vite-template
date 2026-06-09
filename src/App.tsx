@@ -431,7 +431,7 @@ function AppContent() {
               size="sm"
               iconLeading={<GithubIcon />}
               onPress={() => {
-                window.open("https://github.com/maholan/mhl-untitledui-platform", "_blank");
+                window.open("https://github.com/maholan/mhl-ui-platform", "_blank");
               }}
             >
               GitHub
@@ -752,7 +752,7 @@ function AppContent() {
           </p>
           <div className="flex items-center gap-4">
             <a
-              href="https://github.com/maholan/mhl-untitledui-platform"
+              href="https://github.com/maholan/mhl-ui-platform"
               className="text-tertiary hover:text-primary text-sm transition-colors"
               target="_blank"
               rel="noopener noreferrer"

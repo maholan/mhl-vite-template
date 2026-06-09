@@ -36,7 +36,7 @@ A production-ready starter template for building enterprise-grade applications w
 npx @maholan/cli init --template vite
 
 # Or clone directly
-git clone https://github.com/maholan/mhl-untitledui-platform.git
+git clone https://github.com/maholan/mhl-ui-platform.git
 cd templates/vite
 npm install
 npm run dev
